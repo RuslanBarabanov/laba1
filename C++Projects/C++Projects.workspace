@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="C++Projects" Database="" Version="10000">
+  <Project Name="laba1_1" Path="C++Projects2/C++Projects2.project" Active="Yes"/>
+  <Project Name="laba1_1" Path="C++Projects2/C++Projects2.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Debug" Selected="yes">
+      <Environment/>
+      <Project Name="laba1_2" ConfigName="Debug"/>
+      <Project Name="laba1_2" ConfigName="Debug"/>
+      <Project Name="laba1_2" ConfigName="Debug"/>
+      <Project Name="laba1_1" ConfigName="Debug"/>
+      <Project Name="laba1_1" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Release" Selected="no">
+      <Environment/>
+      <Project Name="laba1_2" ConfigName="Release"/>
+      <Project Name="laba1_2" ConfigName="Release"/>
+      <Project Name="laba1_2" ConfigName="Release"/>
+      <Project Name="laba1_1" ConfigName="Release"/>
+      <Project Name="laba1_1" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
