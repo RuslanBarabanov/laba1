@@ -2,18 +2,18 @@
 ## Auto Generated makefile by CodeLite IDE
 ## any manual changes will be erased      
 ##
-## Release
+## Debug
 ProjectName            :=laba1_2
-ConfigurationName      :=Release
+ConfigurationName      :=Debug
 WorkspacePath          :=/home/stud/C++Projects/C++Projects
-ProjectPath            :=/home/stud/C++Projects/C++Projects/C++Projects
+ProjectPath            :=/home/stud/C++Projects/C++Projects/laba1_2
 IntermediateDirectory  :=$(ConfigurationName)
 OutDir                 := $(IntermediateDirectory)
 CurrentFileName        :=
 CurrentFilePath        :=
 CurrentFileFullPath    :=
 User                   :=
-Date                   :=11/07/25
+Date                   :=11/21/25
 CodeLitePath           :=/home/stud/.codelite
 LinkerName             :=/usr/bin/g++
 SharedObjectLinkerName :=/usr/bin/g++ -shared -fPIC
@@ -28,7 +28,7 @@ LibraryPathSwitch      :=-L
 PreprocessorSwitch     :=-D
 SourceSwitch           :=-c 
 OutputFile             :=$(IntermediateDirectory)/$(ProjectName)
-Preprocessors          :=$(PreprocessorSwitch)NDEBUG 
+Preprocessors          :=
 ObjectSwitch           :=-o 
 ArchiveOutputSwitch    := 
 PreprocessOnlySwitch   :=-E
@@ -50,8 +50,8 @@ LibPath                := $(LibraryPathSwitch).
 AR       := /usr/bin/ar rcu
 CXX      := /usr/bin/g++
 CC       := /usr/bin/gcc
-CXXFLAGS :=  -O2 -Wall $(Preprocessors)
-CFLAGS   :=  -O2 -Wall $(Preprocessors)
+CXXFLAGS :=  -g -O0 -Wall $(Preprocessors)
+CFLAGS   :=  -g -O0 -Wall $(Preprocessors)
 ASFLAGS  := 
 AS       := /usr/bin/as
 
@@ -60,7 +60,7 @@ AS       := /usr/bin/as
 ## User defined environment variables
 ##
 CodeLiteDir:=/usr/share/codelite
-Objects0=$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix) 
+Objects0=$(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix) $(IntermediateDirectory)/main.cpp$(ObjectSuffix) 
 
 
 
@@ -91,17 +91,17 @@ PreBuild:
 ##
 ## Objects
 ##
-$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
-	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/stud/C++Projects/C++Projects/C++Projects/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
-$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
-	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
-
 $(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix): anotherCipher.cpp
 	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/anotherCipher.cpp$(DependSuffix) -MM anotherCipher.cpp
-	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/stud/C++Projects/C++Projects/C++Projects/anotherCipher.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix) $(IncludePath)
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/stud/C++Projects/C++Projects/laba1_2/anotherCipher.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/anotherCipher.cpp$(ObjectSuffix) $(IncludePath)
 $(IntermediateDirectory)/anotherCipher.cpp$(PreprocessSuffix): anotherCipher.cpp
 	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/anotherCipher.cpp$(PreprocessSuffix) anotherCipher.cpp
+
+$(IntermediateDirectory)/main.cpp$(ObjectSuffix): main.cpp
+	@$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) -MG -MP -MT$(IntermediateDirectory)/main.cpp$(ObjectSuffix) -MF$(IntermediateDirectory)/main.cpp$(DependSuffix) -MM main.cpp
+	$(CXX) $(IncludePCH) $(SourceSwitch) "/home/stud/C++Projects/C++Projects/laba1_2/main.cpp" $(CXXFLAGS) $(ObjectSwitch)$(IntermediateDirectory)/main.cpp$(ObjectSuffix) $(IncludePath)
+$(IntermediateDirectory)/main.cpp$(PreprocessSuffix): main.cpp
+	$(CXX) $(CXXFLAGS) $(IncludePCH) $(IncludePath) $(PreprocessOnlySwitch) $(OutputSwitch) $(IntermediateDirectory)/main.cpp$(PreprocessSuffix) main.cpp
 
 
 -include $(IntermediateDirectory)/*$(DependSuffix)

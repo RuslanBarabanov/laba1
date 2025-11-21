@@ -2,6 +2,8 @@
 <CodeLite_Workspace Name="C++Projects" Database="" Version="10000">
   <Project Name="laba1_1" Path="C++Projects2/C++Projects2.project" Active="Yes"/>
   <Project Name="laba1_1" Path="C++Projects2/C++Projects2.project" Active="Yes"/>
+  <Project Name="kurs" Path="kurs/kurs.project" Active="No"/>
+  <Project Name="laba1_2" Path="laba1_2/laba1_2.project" Active="No"/>
   <BuildMatrix>
     <WorkspaceConfiguration Name="Debug" Selected="yes">
       <Environment/>
@@ -10,14 +12,18 @@
       <Project Name="laba1_2" ConfigName="Debug"/>
       <Project Name="laba1_1" ConfigName="Debug"/>
       <Project Name="laba1_1" ConfigName="Debug"/>
+      <Project Name="kurs" ConfigName="Debug"/>
+      <Project Name="laba1_2" ConfigName="Debug"/>
     </WorkspaceConfiguration>
-    <WorkspaceConfiguration Name="Release" Selected="no">
+    <WorkspaceConfiguration Name="Release" Selected="yes">
       <Environment/>
       <Project Name="laba1_2" ConfigName="Release"/>
       <Project Name="laba1_2" ConfigName="Release"/>
       <Project Name="laba1_2" ConfigName="Release"/>
       <Project Name="laba1_1" ConfigName="Release"/>
       <Project Name="laba1_1" ConfigName="Release"/>
+      <Project Name="kurs" ConfigName="Release"/>
+      <Project Name="laba1_2" ConfigName="Release"/>
     </WorkspaceConfiguration>
   </BuildMatrix>
 </CodeLite_Workspace>

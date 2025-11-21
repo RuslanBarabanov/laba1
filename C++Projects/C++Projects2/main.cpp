@@ -3,30 +3,46 @@
 #include <locale>
 #include <algorithm>
 
-void check(const std::wstring& Text, const std::wstring& key)
+void check(const std::wstring& Text, const std::wstring& key, bool testErrors = false)
 {
-    std::wstring cipherText;
-    std::wstring decryptedText;
-    modAlphaCipher cipher(key);
-    cipherText = cipher.encrypt(Text);
-    decryptedText = cipher.decrypt(cipherText);
-    std::wcout << L"key=" << key << std::endl;
-    std::wcout << L"Original: " << Text << std::endl;
-    std::wcout << L"Encrypt: " << cipherText << std::endl;
-    std::wcout << L"Decrypt: " << decryptedText << std::endl;
+    try {
+        std::wstring cipherText;
+        std::wstring decryptedText;
+        modAlphaCipher cipher(key);
+        cipherText = cipher.encrypt(Text);
+        
+        // Для тестирования ошибок "портим" зашифрованный текст
+        if (testErrors && !cipherText.empty()) {
+            cipherText[0] = L'Я'; // Меняем первый символ
+        }
+        
+        decryptedText = cipher.decrypt(cipherText);
+        
+        std::wcout << L"key=" << key << std::endl;
+        std::wcout << L"Original: " << Text << std::endl;
+        std::wcout << L"Encrypt: " << cipherText << std::endl;
+        std::wcout << L"Decrypt: " << decryptedText << std::endl;
 
-    std::wstring textWithoutSpaces = Text;
-    textWithoutSpaces.erase(std::remove(textWithoutSpaces.begin(), textWithoutSpaces.end(), ' '), textWithoutSpaces.end());
-    
-    for (auto& c : textWithoutSpaces) {
-        c = std::towupper(c);
+        std::wstring textWithoutSpaces = Text;
+        textWithoutSpaces.erase(std::remove(textWithoutSpaces.begin(), textWithoutSpaces.end(), ' '), textWithoutSpaces.end());
+        
+        for (auto& c : textWithoutSpaces) {
+            c = std::towupper(c);
+        }
+
+        if(decryptedText == textWithoutSpaces)
+            std::wcout << L"Ok\n";
+        else
+            std::wcout << L"Err\n";
+            
+    } catch (const cipher_error& e) {
+        std::wcout << L"Ошибка шифрования: ";
+        std::cout << e.what() << std::endl;
+    } catch (const std::exception& e) {
+        std::wcout << L"Неожиданная ошибка: ";
+        std::cout << e.what() << std::endl;
     }
-
-    if(decryptedText == textWithoutSpaces)
-        std::wcout << L"Ok\n";
-    else
-        std::wcout << L"Err\n";
-    
+    std::wcout << L" " << std::endl;
 }
 
 int main()
@@ -34,8 +50,20 @@ int main()
     std::locale::global(std::locale(""));
     std::wcout.imbue(std::locale());
 
-    check(L"Во все", L"тяжкие");
+    std::wcout << L"ТЕСТИРОВАНИЕ ШИФРА ГРОНСФЕЛЬДА С ИСКЛЮЧЕНИЯМИ" << std::endl;
+    
+    // Позитивные тесты
+    std::wcout << L"\n1. Позитивные тесты:" << std::endl;
+    check(L"во все", L"тяжкие");
     check(L"фылдовыдлао", L"отлично");
+
+    // Тесты с ошибками
+    std::wcout << L"\n2. Тесты с ошибками:" << std::endl;
+    check(L"", L"КЛЮЧ");                    // Пустой текст
+    check(L"ПРИВЕТ", L"");                  // Пустой ключ
+    check(L"Hello123", L"КЛЮЧ");            // Неправильные символы в тексте
+    check(L"ПРИВЕТ", L"123");               // Неправильные символы в ключе
+    check(L"ПРИВЕТ", L"ААА");               // Вырожденный ключ
 
     return 0;
 }
