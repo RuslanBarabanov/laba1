@@ -10,12 +10,7 @@ void check(const std::wstring& Text, const std::wstring& key, bool testErrors = 
         std::wstring decryptedText;
         modAlphaCipher cipher(key);
         cipherText = cipher.encrypt(Text);
-        
-        // Для тестирования ошибок "портим" зашифрованный текст
-        if (testErrors && !cipherText.empty()) {
-            cipherText[0] = L'Я'; // Меняем первый символ
-        }
-        
+
         decryptedText = cipher.decrypt(cipherText);
         
         std::wcout << L"key=" << key << std::endl;

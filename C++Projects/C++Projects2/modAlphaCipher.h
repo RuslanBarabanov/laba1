@@ -24,7 +24,6 @@ private:
     std::wstring convert(const std::vector<int>& v);
     std::wstring toUpperCase(const std::wstring& s);
     
-    // Методы валидации
     std::wstring getValidKey(const std::wstring& s);
     std::wstring getValidOpenText(const std::wstring& s);
     std::wstring getValidCipherText(const std::wstring& s);

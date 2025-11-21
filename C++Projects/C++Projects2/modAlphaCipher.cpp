@@ -19,7 +19,6 @@ std::wstring modAlphaCipher::getValidKey(const std::wstring& s)
         }
     }
     
-    // Проверка на вырожденный ключ (все одинаковые символы)
     bool all_same = true;
     for (size_t i = 1; i < tmp.size(); i++) {
         if (tmp[i] != tmp[0]) {
